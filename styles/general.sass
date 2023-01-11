@@ -1,5 +1,5 @@
 header
-    height: 200px
+    height: 150px
     padding: 20px
     background: linear-gradient(164deg, #41cd9e, transparent)
     display: flex
@@ -70,6 +70,7 @@ main
     .title
         text-transform: capitalize
         margin-bottom: 20px
+        
     .content
         display: flex
         flex-direction: row
@@ -81,4 +82,39 @@ main
         display: flex
         flex-direction: column
         width: 30%
-        
+
+.single_event
+    display: flex
+    flex-direction: column
+    gap: 10px
+    .email_registration
+        label 
+            display: flex
+            margin-bottom: 15px
+            margin-top: 20px
+            font-size: 18px
+            font-weight: 600
+            text-transform: uppercase
+        input
+            height: 40px
+            min-width: 350px
+            box-shadow: none
+            border-radius: 5px
+            border: 1px solid #ccc
+            font-size: 16px  
+            padding: 10px
+        button
+            border-radius: 5px
+            height: 40px 
+            min-width: 150px
+            text-transform: uppercase
+            font-size: 16px
+            font-weight: 600
+            border: 1px solid #ccc
+            margin-left: 10px
+            background: #0a3f2d
+            cursor: pointer
+            &:hover
+                background: #41cd9e
+            &:active
+                transform: scale(0.97)
