@@ -22,12 +22,14 @@ header
 footer
     padding: 10px
     text-align: center
+    background: #41cd9e
 
 main
     width: 100%
-    max-width: 1450px
+    max-width: 1250px
     margin: auto
-    padding: 30px
+    padding: 75px 30px
+    min-height: 550px
 
 .home_body
     display: flex
@@ -40,5 +42,43 @@ main
         justify-content: center
         align-content: center
         align-items: center
+        &:nth-child(even)
+            direction: rtl
         .content
             width: 50%
+
+.events_page
+    width: 100%
+    display: flex
+    flex-direction: row    
+    gap: 30px
+    .card
+        position: relative        
+        h2
+            position: absolute
+            width: 100%
+            top: 50%
+            text-align: center
+            justify-content: center
+            font-size: 38px
+            color: white
+            text-transform: uppercase
+            text-shadow: 1px 1px 20px black
+
+.cat_events
+    width: 100%
+    .title
+        text-transform: capitalize
+        margin-bottom: 20px
+    .content
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        gap: 30px
+        width: 100%
+        justify-content: flex-start
+    .card
+        display: flex
+        flex-direction: column
+        width: 30%
+        

@@ -7,7 +7,7 @@ export const HomePage = ({ data }) => {
       {data &&
         data.map((ev) => (
           <Link className="card" key={ev.id} href={`/events/${ev.id}`} passHref>
-            <Image width={300} height={300} alt={ev.title} src={ev.image} />
+            <Image width={600} height={400} alt={ev.title} src={ev.image} />
             <div className="content">
               <h2>{ev.title}</h2>
               <p>{ev.description}</p>
