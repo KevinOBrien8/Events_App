@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const EventCard = ({ data }) => {
+  const [message, setMessage] = useState("");
   const inputEmail = useRef();
 
   const router = useRouter();
@@ -13,6 +14,13 @@ const EventCard = ({ data }) => {
     const eventId = router?.query.id;
 
     const emailValue = inputEmail.current.value;
+
+    const validRegex =
+      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if (!emailValue.match(validRegex)) {
+      setMessage("Please use a valid email address format");
+    }
 
     try {
       //POST fetch request
@@ -25,7 +33,8 @@ const EventCard = ({ data }) => {
       });
       if (!res.ok) throw new Error(`Error: ${res.status}`);
       const data = await res.json();
-      console.log("POST", data);
+      setMessage(data.message);
+      inputEmail.current.value = "";
 
       //body emailValue and eventID
     } catch (err) {
@@ -49,6 +58,7 @@ const EventCard = ({ data }) => {
         />
         <button>Submit</button>
       </form>
+      <p>{message}</p>
     </div>
   );
 };
