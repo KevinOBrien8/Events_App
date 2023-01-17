@@ -24,7 +24,7 @@ export default function handler(req, res) {
   //check format of email
 
   const filePath = buildPath();
-  const writePath = path.join("/tmp", "data.json");
+
   const { events_categories, allEvents } = extractData(filePath);
 
   if (!allEvents) {
@@ -60,7 +60,7 @@ export default function handler(req, res) {
     });
 
     fs.writeFileSync(
-      writePath,
+      filePath,
       JSON.stringify({ events_categories, allEvents: newAllEvents })
     );
 
