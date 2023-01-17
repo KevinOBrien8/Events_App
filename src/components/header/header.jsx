@@ -25,7 +25,7 @@ export const Header = () => {
           </ul>
         </nav>
       </div>
-      <h1>Placeholder for Page Title</h1>
+      <h1>Current Events In Major Cities</h1>
     </header>
   );
 };
